@@ -1,6 +1,7 @@
 package com.fundamentosPlatzi.springboot.fundamentos;
 
-import component.ComponentDependency;
+import com.fundamentosPlatzi.springboot.fundamentos.bean.MyBean;
+import com.fundamentosPlatzi.springboot.fundamentos.component.ComponentDependency;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
@@ -10,11 +11,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class FundamentosApplication implements CommandLineRunner {
 
-	private ComponentDependency componentDependency;
+	private ComponentDependency componentDependency;	//Declaramos interface
+	private MyBean myBean;								//Declaramos la interface
 
 	@Autowired
 	public FundamentosApplication(@Qualifier("componentTwoImplement") ComponentDependency componentDependency){
-		this.componentDependency = componentDependency;
+		this.componentDependency = componentDependency;		//Instanciamos la interface, "la inyectamos"
+		this.myBean = myBean;								//Inyectamos la dependencia en el constructor
 	}
 
 	public static void main(String[] args) {
@@ -24,5 +27,6 @@ public class FundamentosApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		componentDependency.saludar();
+		myBean.print();
 	}
 }

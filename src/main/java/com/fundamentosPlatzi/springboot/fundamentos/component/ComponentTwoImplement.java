@@ -1,5 +1,8 @@
-package component;
+package com.fundamentosPlatzi.springboot.fundamentos.component;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ComponentTwoImplement implements ComponentDependency{
 
     @Override
