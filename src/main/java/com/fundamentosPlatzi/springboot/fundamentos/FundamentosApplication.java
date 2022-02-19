@@ -47,6 +47,11 @@ public class FundamentosApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		ejemplosAnteriores();
+
+	}
+
+	public void ejemplosAnteriores(){
 		componentDependency.saludar();
 		//myBean.print();
 		myBeanWithDependency.printWithDependency();
@@ -58,8 +63,7 @@ public class FundamentosApplication implements CommandLineRunner {
 			int value = 10/0;
 			LOGGER.debug("mi valor : " + value);
 		}catch(Exception e){
-			LOGGER.error("Esto es un error al dividir por cero");
+			LOGGER.error("Esto es un error al dividir por cero" + e.getStackTrace());
 		}
-
 	}
 }
