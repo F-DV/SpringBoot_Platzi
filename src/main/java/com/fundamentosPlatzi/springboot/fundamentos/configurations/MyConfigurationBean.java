@@ -9,18 +9,18 @@ public class MyConfigurationBean {
 
     @Bean                                   //configuramos nuestro bean
     public MyBean beanOperation(){
-        return new MyBeanTwoImplement();       //Nombre de la clase que se va a utilizar
+        return new MyBeanTwoImplement();                                                        //Nombre de la clase que se va a utilizar
     }
 
-    @Bean                                   //configuramos nuestro bean
+    @Bean                                                                                       //configuramos nuestro bean
     public MyOperation beanOperationOperation(){
-        return new MyOperationImplement();       //Nombre de la clase que se va a utilizar
+        return new MyOperationImplement();                                                      //Nombre de la clase que se va a utilizar
     }
 
-    @Bean                                   //configuramos nuestro bean
+    @Bean                                                                                       //configuramos nuestro bean
     public MyBeanWithDependency beanOperationImplementwithDependency(MyOperation myOperation){
 
-        return new MyBeanWithDependencyImplement(myOperation);       //Nombre de la clase que se va a utilizar
+        return new MyBeanWithDependencyImplement(myOperation);                                  //Nombre de la clase que se va a utilizar
     }
 
 }

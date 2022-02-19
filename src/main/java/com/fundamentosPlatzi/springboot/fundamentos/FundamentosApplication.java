@@ -16,11 +16,14 @@ public class FundamentosApplication implements CommandLineRunner {
 	private MyBean myBean;																	//Declaramos la interface
 	private MyBeanWithDependency myBeanWithDependency;
 
+
 	@Autowired
 	public FundamentosApplication(@Qualifier("componentTwoImplement") ComponentDependency componentDependency, MyBean myBean, MyBeanWithDependency myBeanWithDependency){
+
 		this.componentDependency = componentDependency;										//Instanciamos la interface, "la inyectamos"
 		this.myBean = myBean;																//Inyectamos la dependencia en el constructor
 		this.myBeanWithDependency = myBeanWithDependency;									//Inyectamos dependencia
+
 	}
 
 
@@ -33,5 +36,6 @@ public class FundamentosApplication implements CommandLineRunner {
 		componentDependency.saludar();
 		myBean.print();
 		myBeanWithDependency.printWithDependency();
+
 	}
 }
